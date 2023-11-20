@@ -11,5 +11,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Lvl5.unity
     guid: 55e23915b9d326048a642498bc597680
+  - enabled: 0
+    path: Assets/Samples/Google Cardboard XR Plugin for Unity/1.22.0/Hello Cardboard/Scenes/VrMode.unity
+    guid: 4812ec05e87b8414abcdfe0d625c0e60
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 3be394fc7bc7c334fabadda7a3134226, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 49ee5d2b599831a4d86dac4765207ec0, type: 2}
