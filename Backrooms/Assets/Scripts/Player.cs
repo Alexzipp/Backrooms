@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public Transform vrPlayer;                  // Import the VRPlayer's transform component 
-    private CharacterController cc;             // Import the Character Controller for Player GameObject (parent of the VRPlayer)
+    public bool disabled = false;
+    
+    public Transform vrPlayer;                  
+    private CharacterController cc;            
 
-    public float lookDownAngle = 25.0f;         // Create a variable to represent the look down angle that will trigger the players movement
-    public float speed = 3.0f;                  // Create a variable to represent the speed the player will move
-    public bool moveForward;                    // Create a true/false Boolean to let us know if the playe is in the moveForward state
+    public float lookDownAngle = 25.0f;       
+    public float speed = 3.0f;                 
+    public bool moveForward;                    
 
 
 
@@ -17,13 +19,24 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cc = GetComponent<CharacterController>();       // Finish the importing of the Character controller 
+        cc = GetComponent<CharacterController>();       
 
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if(!disabled)
+        {
+            UpdateMovement();
+        }
+
+    }
+
+    void UpdateMovement()
+    {
+
         if (vrPlayer.eulerAngles.x >= lookDownAngle && vrPlayer.eulerAngles.x < 90.0f)
         {            // Check if the VRPlayers headmovement rotation is more than the lookDownAngle and less than the floor
             moveForward = true;                                                                     // Switch Boolean to being in the moveForward state
@@ -40,7 +53,6 @@ public class Player : MonoBehaviour
             cc.SimpleMove(forward * speed);                                                         // Tell the Character Controller for the Player GameObject to move in the way of the above Forward variable and multiply it be speed
 
         }
-
     }
 
 
