@@ -17,7 +17,7 @@ public class VRPlayer : MonoBehaviour
     void Update()
     {
         //Local Raycast (laser) method, the results will be stored in the varaible hit
-        RaycastHit hit;
+        /*RaycastHit hit;
 
         if (Input.GetButtonDown("Fire1"))
         {                      // Code to see if the VR button has been pressed
@@ -49,5 +49,4 @@ public class VRPlayer : MonoBehaviour
             }
         }
 
-    }
-}
+    
